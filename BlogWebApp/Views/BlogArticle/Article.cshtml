@@ -1,0 +1,87 @@
+﻿@model BlogService.Database.BlogArticle
+
+@{
+    ViewData["Title"] = "Article";
+}
+
+<h1>Article</h1>
+
+<div>
+    <h4>Blog Article</h4>
+    <!--<hr />
+    <div class="article-page container">
+        <div class="col-md-8 article-details">-->
+            @*@Html.Partial("_ArticleSummary", Model)*@
+            <!--<hr />
+            <p>@Html.DisplayNameFor(model => model.BlogContent)</p>
+        </div>
+
+        <div class="col-md-4">-->
+            @* button group like likes, no of views *@
+        <!--</div>
+        <div class="col-md-4">-->
+            @* comments group *@
+        <!--</div>
+    </div>-->
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.BlogArticleId)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.BlogArticleId)
+            </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlogContent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlogContent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlogTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlogTitle)
+        </dd>
+        <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.BlogCategoryId)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.BlogCategoryId)
+            </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NoOfViews)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoOfViews)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NoOfLikes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoOfLikes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlogArticleCreatedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlogArticleCreatedOn)
+        </dd>
+        <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.IsDisplay)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.IsDisplay)
+            </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BloggerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BloggerName)
+        </dd>
+    </dl>
+</div>
+@*<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>*@

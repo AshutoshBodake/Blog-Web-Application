@@ -33,13 +33,13 @@ namespace BlogService.Controllers
             return _db.BlogArticles;
         }
 
-        [HttpGet("{BlogArticleId}")]
+        [HttpGet("GetBlogArticleById")]
         public BlogArticle GetBlogArticles(int BlogArticleId)
         {
             return _db.BlogArticles.Find(BlogArticleId);
         }
 
-        [HttpGet("{BlogCategoryId}")]
+        [HttpGet("GetBlogCategoryById")]
         public IEnumerable<BlogArticle> GetBlogArticlesByCategory(int BlogCategoryId)
         {
             return (IEnumerable<BlogArticle>)_db.BlogArticles.Select(ba => ba.BlogCategoryId == BlogCategoryId);

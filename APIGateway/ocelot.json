@@ -6,10 +6,10 @@
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 44307
+            "Port": 44309
           }
         ],
-        "UpstreamPathTemplate": "/Blog",
+        "UpstreamPathTemplate": "/Blog/{everything}",
         "UpstreamHttpMethod": [ "Get", "Post" ]
       },
       {

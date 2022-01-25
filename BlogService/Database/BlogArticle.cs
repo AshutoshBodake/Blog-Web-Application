@@ -17,5 +17,6 @@ namespace BlogService.Database
         public DateTime? BlogArticleCreatedOn { get; set; }
         public ICollection<BlogComment> Blogcomments { get; set; }
         public bool? IsDisplay { get; set; }
+        public string BloggerName { get; set; }
     }
 }

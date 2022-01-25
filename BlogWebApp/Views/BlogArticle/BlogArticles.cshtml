@@ -1,0 +1,87 @@
+﻿@model IEnumerable<BlogService.Database.BlogArticle>
+
+@{
+    ViewData["Title"] = "GetBlogArticles";
+}
+
+<h1>All Blog Articles</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+            @Html.DisplayNameFor(model => model.BlogArticleId)
+        </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.BlogContent)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.BlogTitle)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.BlogCategoryId)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfViews)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogArticleCreatedOn)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.IsDisplay)
+        </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.BloggerName)
+            </th>
+            <th>
+                @Html.DisplayName("Actions")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogArticleId)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.BlogContent)
+        </td>*@
+            <td>
+                <a asp-controller="BlogArticle" asp-action="GetBlogArticle" asp-route-id="@item.BlogArticleId">@Html.DisplayFor(modelItem => item.BlogTitle)</a>
+                @*@Html.DisplayFor(modelItem => item.BlogTitle)*@
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.BlogCategoryId)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfViews)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogArticleCreatedOn)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.IsDisplay)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.BloggerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
